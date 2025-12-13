@@ -1,0 +1,11 @@
+/* global styles */
+
+@use "variables" as v;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,12 @@
+//media queries
+$breakpoints: (
+  mobile: 23.125em,
+  tablet: 47.5em,
+  desktop: 70em,
+);
+
+@mixin responsive($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}

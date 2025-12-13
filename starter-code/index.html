@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <title>Frontend Mentor | Space tourism website</title>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="header__logo">
+      <img src="./assets/shared/logo.svg" alt="logo">
+    </div>
+
+    <nav class="header__nav">
+      <ul class="nav__menu">
+        <li class="menu__item" data-index="0"> 00 Home </li>
+        <li class="menu__item">01 Destination </li>
+        <li class="menu__item"> 02 Crew </li>
+        <li class="menu__item"> 03 Technology </li>
+      </ul>
+    </nav>
+
+    <div class="header__hamburger">
+      <button class="hamburger__button">
+        <img class="btn__open" src="./assets/shared/icon-hamburger.svg" alt="open menu">
+        <img class="btn__close" src="./assets/shared/icon-close.svg" alt="close menu">
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section__home" data-index="0">
+      <div class="main__intro">
+        <h1> So, you want to travel to </h1>
+        <h2 class="main__title"> Space </h2>
+
+        <p class="main__p"> Let’s face it; if you want to go to space, you might as well genuinely go to
+          outer space and not hover kind of on the edge of it. Well sit back, and relax
+          because we’ll give you a truly out of this world experience! </p>
+      </div>
+      <div class="main__explore">
+        <button class="main__button"> Explore </button>
+      </div>
+    </section>
+
+    <section class="section__destination inactive">
+      <span class="section__title">01 Pick your destination</span>
+
+      <div class="d__container">
+        <div class="d__img"></div>
+
+        <div class="d__txt">
+          <ul class="d__menu">
+            <li class="d__tab" data-index="0"></li>
+            <li class="d__tab"></li>
+            <li class="d__tab"></li>
+            <li class="d__tab"></li>
+          </ul>
+
+          <div class="d__info">
+            <h2 class="d__name"></h2>
+            <p class="d__description"></p>
+            <div class="d__block">
+              <div class="d__blockItem">
+                <h3 class="d__item"> Avg. distance </h3>
+                <p class="d__distance"></p>
+              </div>
+              <div class="d__blockItem">
+                <h3 class="d__item"> Est. travel time </h3>
+                <p class="d__travel"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="section__crew inactive">
+      <span class="section__title">02 Meet your crew</span>
+    </section>
+
+
+    <section class="section__technology inactive">
+      <span class="section__title">03 Space launch 101</span>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/ktzazz">Katia Aragon</a>.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
