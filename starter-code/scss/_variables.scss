@@ -1,9 +1,90 @@
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url("starter-code/assets/fonts/BarlowCondensed-Regular.woff2")
+      format("woff2"),
+    url("starter-code/assets/fonts/BarlowCondensed-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Barlow";
+  src: url("starter-code/assets/fonts/Barlow-Regular.woff2") format("woff2"),
+    url("starter-code/assets/fonts/Barlow-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bellefair";
+  src: url("starter-code/assets/fonts/Bellefair-Regular.woff2") format("woff2"),
+    url("starter-code/assets/fonts/Bellefair-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+$bellefair-settings: (
+  "family": "Bellefair, serif",
+  "preset-1-fs": 144px,
+  "preset-2-fs": (
+    "pc": 100px,
+    "tablet": 80px,
+    "mobile": 56px,
+  ),
+  "preset-3-fs": 56px,
+  "preset-4-fs": 32px,
+  "preset-6-fs": 28px,
+);
+
+$barlowCondensed-settings: (
+  "family": "Barlow Condensed, sans-serif",
+  "preset-5-fs": 28px,
+  "preset-7-fs": 14px,
+  "preset-8-fs": 16px,
+
+  // Letter Spacing
+  "preset-5-ls": 4.75px,
+  "preset-7-ls": 2.35px,
+  "preset-8-ls": 2.7px,
+);
+
+$barlow-settings: (
+  "family": "Barlow, sans-serif",
+  "preset-9-fs": 18px,
+  "line-height-p9": 1.8,
+);
+
+$spacing-values: (
+  "xxs": 2px,
+  "xs": 4px,
+  "s": 8px,
+  "ms": 12px,
+  "m": 16px,
+  "ml": 24px,
+  "l": 32px,
+  "xl": 40px,
+  "xxl": 48px,
+  "xxxl": 64px,
+  "huge": 80px,
+  "extra-huge": 96px,
+  "max-desktop": 128px,
+);
+
+$darkBLue: hsl(230, 35%, 7%);
+$lightBlue: hsl(231, 77%, 90%);
+$white: hsl(0, 0%, 100%);
+
 //media queries
 $breakpoints: (
   mobile: 23.125em,
   tablet: 47.5em,
   desktop: 70em,
 );
+
+/* 37.5em 100em  */
 
 @mixin responsive($size) {
   @media (min-width: map-get($breakpoints, $size)) {
