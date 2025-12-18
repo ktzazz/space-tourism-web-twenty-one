@@ -9,3 +9,9 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --primary-color: #{v.$white};
+  --secondary-color: #{v.$lightBlue};
+  --background-color: #{v.$darkBlue};
+}

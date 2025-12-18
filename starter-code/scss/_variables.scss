@@ -26,36 +26,64 @@
   font-display: swap;
 }
 
+// Font settings
+
 $bellefair-settings: (
   "family": "Bellefair, serif",
-  "preset-1-fs": 144px,
+  "preset-1-fs": (
+    "desktop": 144px,
+    "mobile": 80px,
+  ),
   "preset-2-fs": (
-    "pc": 100px,
+    "desktop": 100px,
     "tablet": 80px,
     "mobile": 56px,
   ),
-  "preset-3-fs": 56px,
-  "preset-4-fs": 32px,
-  "preset-6-fs": 28px,
+  "preset-3-fs": (
+    "desktop": 56px,
+    "tablet": 40px,
+    "mobile": 24px,
+  ),
+  "preset-4-fs": (
+    "desktop": 32px,
+    "tablet": 24px,
+    "mobile": 18px,
+  ),
+  "preset-6-fs": (
+    "desktop": 28px,
+    "mobile": 16px,
+  ),
 );
 
 $barlowCondensed-settings: (
   "family": "Barlow Condensed, sans-serif",
-  "preset-5-fs": 28px,
-  "preset-7-fs": 14px,
-  "preset-8-fs": 16px,
-
-  // Letter Spacing
-  "preset-5-ls": 4.75px,
-  "preset-7-ls": 2.35px,
-  "preset-8-ls": 2.7px,
+  "preset-5-fs": (
+    "desktop": 28px,
+    "tablet": 20px,
+    "letter-spacing": 4.75px,
+  ),
+  "preset-7-fs": (
+    "desktop": 14px,
+    "letter-spacing": 2.35px,
+  ),
+  "preset-8-fs": (
+    "desktop": 16px,
+    "mobile": 14px,
+    "letter-spacing": 2.7px,
+  ),
 );
 
 $barlow-settings: (
   "family": "Barlow, sans-serif",
-  "preset-9-fs": 18px,
-  "line-height-p9": 1.8,
+  "preset-9-fs": (
+    "desktop": 18px,
+    "tablet": 16px,
+    "mobile": 15px,
+    "line-height": 1.8,
+  ),
 );
+
+// Spacing
 
 $spacing-values: (
   "xxs": 2px,
@@ -73,6 +101,8 @@ $spacing-values: (
   "max-desktop": 128px,
 );
 
+// Colors
+
 $darkBLue: hsl(230, 35%, 7%);
 $lightBlue: hsl(231, 77%, 90%);
 $white: hsl(0, 0%, 100%);
@@ -89,5 +119,45 @@ $breakpoints: (
 @mixin responsive($size) {
   @media (min-width: map-get($breakpoints, $size)) {
     @content;
+  }
+}
+
+// presets mixins
+
+@mixin set-preset($font, $preset-name) {
+  $preset: map-get($font, $preset-name);
+
+  font-family: map-get($font, "family");
+
+  @if map-has-key($preset, "letter-spacing") {
+    letter-spacing: map-get($preset, "letter-spacing");
+  }
+  @if map-has-key($preset, "line-height") {
+    line-height: map-get($preset, "line-height");
+  }
+
+  // mobile first
+  font-size: map-get($preset, "mobile");
+
+  // font size media queries
+
+  @include responsive(tablet) {
+    @if map-has-key($preset, "tablet") {
+      font-size: map-get($preset, "tablet");
+    }
+  }
+
+  @include responsive(desktop) {
+    @if map-has-key($preset, "desktop") {
+      font-size: map-get($preset, "desktop");
+    }
+  }
+}
+
+// spacing function
+
+@function spacing($size) {
+  @if map-has-key($spacing-values, $size) {
+    @return map-get($spacing-values, $size);
   }
 }
