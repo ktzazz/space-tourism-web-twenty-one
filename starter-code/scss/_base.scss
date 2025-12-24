@@ -13,5 +13,26 @@
 :root {
   --primary-color: #{v.$white};
   --secondary-color: #{v.$lightBlue};
-  --background-color: #{v.$darkBlue};
+  --background-color: #{v.$darkBLue};
+}
+
+.inactive {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.d__img {
+  display: block;
+  // 2. Darle tamaño (ajusta según tu diseño de Figma)
+  width: 100%; // Ocupa el ancho de su contenedor
+  max-width: 445px; // Tamaño máximo para que no se pixele
+  aspect-ratio: 1 / 1; // Lo hace un cuadrado perfecto (ideal para planetas)
+
+  // 3. Ajustar la imagen de fondo
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
