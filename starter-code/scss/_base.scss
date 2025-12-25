@@ -16,6 +16,18 @@
   --background-color: #{v.$darkBLue};
 }
 
+//.on FOR NAV AND TABS
+.on {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+//.onBtn FOR BTNS
+.onBtn {
+  background-color: red;
+  color: var(--primary-color);
+}
+
 .inactive {
   display: none;
 }
@@ -24,7 +36,10 @@
   display: block;
 }
 
-.d__img {
+.d__img,
+.c__img,
+.t__img {
+  // 1. Hacerlo un cuadrado
   display: block;
   // 2. Darle tamaño (ajusta según tu diseño de Figma)
   width: 100%; // Ocupa el ancho de su contenedor
