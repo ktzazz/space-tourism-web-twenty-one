@@ -124,18 +124,23 @@ document.addEventListener("DOMContentLoaded", function () {
     currentSize = index;
     const tech = techData[index];
 
+    tName.textContent = tech.name;
+    tDescription.textContent = tech.description;
+
+    sizeChange(tech);
+  }
+
+  function sizeChange(tech) {
     if (tabletMediaQuery.matches) {
       tImg.style.backgroundImage = `url(${tech.images.landscape})`;
     } else {
       tImg.style.backgroundImage = `url(${tech.images.portrait})`;
     }
-
-    tName.textContent = tech.name;
-    tDescription.textContent = tech.description;
   }
 
   tabletMediaQuery.addEventListener("change", () => {
-    updateTech(currentSize);
+    const currentTech = techData[currentSize];
+    sizeChange(currentTech);
   });
 
   function renderBtns() {
