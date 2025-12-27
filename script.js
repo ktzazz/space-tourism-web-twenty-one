@@ -28,11 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const dImg = document.querySelector(".d__img");
   const dTabs = document.querySelectorAll(".d__tab");
 
-  let destinationsData = []; // JSON info
+  let destinationsData = []; // se inicia la lista vacia para después llenarla con la info de JSON (inicializar la variable)
 
   async function loadData() {
-    const response = await fetch("starter-code/data.json");
-    const data = await response.json();
+    // función asíncrona permite que el código espere a que los datos lleguen sin trabar la página
+    const response = await fetch("starter-code/data.json"); // await hace que la variable no guarde nada hasta que fetch regrese con la info. El primer await trae la respuesta del servidor
+    const data = await response.json(); // El segundo await convierte el cuerpo de esa respuesta a algo legible para js.
+    // response: Es la respuesta del servidor.
+    // data: Es la transformación de esa respuesta en algo que JS pueda usar (objetos y listas).
+    // Se le llama "Parsing" (analizar y convertir datos).
 
     destinationsData = data.destinations;
     crewData = data.crew;
@@ -54,9 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
   loadData();
 
   function updateDestination(index) {
-    const destination = destinationsData[index];
+    const destination = destinationsData[index]; // Se crea una "referencia Local", o sea, un const destination para simplificar el acceso a las propiedades del objeto actual
+    // El index es el parámetro que permite saber qué planeta mostrar según el clic del usuario
 
-    dImg.style.backgroundImage = `url(${destination.images.webp})`;
+    // se actualiza el DOM
+
+    dImg.style.backgroundImage = `url(${destination.images.webp})`; // se usa Template Literals, es basicamente el sustituto de + para agregar el valor de una variable
+    // `${}` . String Interpolation es meter la info en la variable
 
     dName.textContent = destination.name;
     dDescription.textContent = destination.description;
@@ -85,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const cImg = document.querySelector(".c__img");
   const cDots = document.querySelectorAll(".c__dot");
 
-  let crewData = []; // JSON info
+  let crewData = []; // se inicia la lista vacia para después llenarla con la info de JSON (inicializar la variable)
 
   function updateCrew(index) {
     const crew = crewData[index];
@@ -117,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const tabletMediaQuery = window.matchMedia("(max-width: 69.5em)");
 
-  let techData = []; // JSON info
+  let techData = []; // se inicia la lista vacia para después llenarla con la info de JSON (inicializar la variable)
   let currentSize = 0;
 
   function updateTech(index) {
