@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateDestination(index) {
     const destination = destinationsData[index]; // Se crea una "referencia Local", o sea, un const destination para simplificar el acceso a las propiedades del objeto actual
     // El index es el parámetro que permite saber qué planeta mostrar según el clic del usuario
-
     // se actualiza el DOM
 
     dImg.style.backgroundImage = `url(${destination.images.webp})`; // se usa Template Literals, es basicamente el sustituto de + para agregar el valor de una variable
@@ -74,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function renderTabs() {
     dTabs.forEach((tab, index) => {
+      // Se hace un mapeo, se vincula un elemento visual (tab) con un dato del JSON usando su posición en la lista (index).
       // create the name list
       tab.textContent = destinationsData[index].name;
       tab.addEventListener("click", () => {
@@ -129,13 +129,14 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentSize = 0;
 
   function updateTech(index) {
-    currentSize = index;
+    currentSize = index; //guarda la posicion de la "diapositiva" en la que se encuentra el usuario en caso de que volteé la pantalla siga en la misma "diapositiva"
+    // La variable currentSize actúa como un ancla. Sin ella, el diseño responsivo perdería la sincronía con la interacción del usuario
     const tech = techData[index];
 
     tName.textContent = tech.name;
     tDescription.textContent = tech.description;
 
-    sizeChange(tech);
+    sizeChange(tech); //se manda la informacion de la const tech a la funcion sizeChange
   }
 
   function sizeChange(tech) {
