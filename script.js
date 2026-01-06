@@ -1,4 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+  //mobile menu
+  const hamburger = document.querySelector(".hamburger__button");
+  const mobileOpen = document.querySelector(".btn__open");
+  const mobileClose = document.querySelector(".btn__close");
+  const mobileMenu = document.querySelector(".header__nav");
+  const overlay = document.querySelector(".overlay");
+
+  function toggleMobileMenu() {
+    mobileOpen.classList.toggle("inactive");
+    mobileClose.classList.toggle("inactive");
+    mobileMenu.classList.toggle("open");
+    overlay.classList.toggle("inactive");
+  }
+
+  hamburger.addEventListener("click", toggleMobileMenu);
+
   // sections tab
   const menuOptions = document.querySelectorAll(".menu__item");
   const sections = document.querySelectorAll("section");
@@ -58,7 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
   loadData();
 
   function updateDestination(index) {
-    const destination = destinationsData[index]; // Se crea una "referencia Local", o sea, un const destination para simplificar el acceso a las propiedades del objeto actual
+    // el index representa en que boton hizo clic el usuario 0, 1, 2
+    const destination = destinationsData[index]; // Se crea una "referencia Local", o sea, un const destination para simplificar el acceso a la información del objeto actual
     // El index es el parámetro que permite saber qué planeta mostrar según el clic del usuario
     // se actualiza el DOM
 
@@ -140,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function sizeChange(tech) {
+    // con los datos de la posicion del usuario en tech se checa que coincida la medida
     if (tabletMediaQuery.matches) {
       tImg.style.backgroundImage = `url(${tech.images.landscape})`;
     } else {
@@ -148,7 +166,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   tabletMediaQuery.addEventListener("change", () => {
-    const currentTech = techData[currentSize];
+    // el comando "change" detecta si hay algun cambio en el match de tabletMediaQuery
+    const currentTech = techData[currentSize]; // techData recibe la informacion de la posicion del usuario
     sizeChange(currentTech);
   });
 
