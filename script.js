@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const tImg = document.querySelector(".t__img");
   const tBtn = document.querySelectorAll(".t__btn");
 
-  const tabletMediaQuery = window.matchMedia("(max-width: 69.5em)");
+  const desktopMediaQuery = window.matchMedia("(min-width: 69.5em)");
 
   let techData = []; // se inicia la lista vacia para después llenarla con la info de JSON (inicializar la variable)
   let currentSize = 0;
@@ -158,14 +158,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function sizeChange(tech) {
     // con los datos de la posicion del usuario en tech se checa que coincida la medida
-    if (tabletMediaQuery.matches) {
-      tImg.style.backgroundImage = `url(${tech.images.landscape})`;
-    } else {
+    if (desktopMediaQuery.matches) {
       tImg.style.backgroundImage = `url(${tech.images.portrait})`;
+    } else {
+      tImg.style.backgroundImage = `url(${tech.images.landscape})`;
     }
   }
 
-  tabletMediaQuery.addEventListener("change", () => {
+  desktopMediaQuery.addEventListener("change", () => {
     // el comando "change" detecta si hay algun cambio en el match de tabletMediaQuery
     const currentTech = techData[currentSize]; // techData recibe la informacion de la posicion del usuario
     sizeChange(currentTech);

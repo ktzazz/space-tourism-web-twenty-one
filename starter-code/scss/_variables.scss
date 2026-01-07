@@ -111,10 +111,10 @@ $white: hsl(0, 0%, 100%);
 $breakpoints: (
   mobile: 23.125em,
   tablet: 47.5em,
-  desktop: 70em,
+  desktop: 69.5em,
 );
 
-/* 37.5em 100em  */
+// responsive mixin
 
 @mixin responsive($size) {
   @media (min-width: map-get($breakpoints, $size)) {
@@ -125,7 +125,7 @@ $breakpoints: (
 // presets mixins
 
 @mixin set-preset($font, $preset-name) {
-  $preset: map-get($font, $preset-name);
+  $preset: map-get($font, $preset-name); //para abreviar abajo
 
   font-family: map-get($font, "family");
 
@@ -154,7 +154,8 @@ $breakpoints: (
   }
 }
 
-// spacing function
+// spacing function to abreviate code instead of writing "padding: map-get($spacing-values, "xxs");"
+// it would be like this: "padding: spacing(xxs);"
 
 @function spacing($size) {
   @if map-has-key($spacing-values, $size) {
