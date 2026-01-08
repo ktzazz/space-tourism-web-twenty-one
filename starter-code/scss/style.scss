@@ -1,6 +1,7 @@
 /* main compilator */
 
-@use "variables";
 @use "base";
-@use "typography";
 @use "layout";
+@use "mixins";
+@use "typography";
+@use "variables";

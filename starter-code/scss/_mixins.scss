@@ -1,0 +1,69 @@
+@use "variables" as v;
+
+// responsive mixin
+
+@mixin responsive($size) {
+  @media (min-width: map-get(v.$breakpoints, $size)) {
+    @content;
+  }
+}
+
+// presets mixins
+
+@mixin set-preset($font, $preset-name) {
+  $preset: map-get($font, $preset-name); //para abreviar abajo
+
+  font-family: map-get($font, "family");
+
+  @if map-has-key($preset, "letter-spacing") {
+    letter-spacing: map-get($preset, "letter-spacing");
+  }
+  @if map-has-key($preset, "line-height") {
+    line-height: map-get($preset, "line-height");
+  }
+
+  // mobile first
+  font-size: map-get($preset, "mobile");
+
+  // font size media queries
+
+  @include responsive(tablet) {
+    @if map-has-key($preset, "tablet") {
+      font-size: map-get($preset, "tablet");
+    }
+  }
+
+  @include responsive(desktop) {
+    @if map-has-key($preset, "desktop") {
+      font-size: map-get($preset, "desktop");
+    }
+  }
+}
+
+// spacing function to abreviate code instead of writing "padding: map-get($spacing-values, "xxs");"
+// it would be like this: "padding: spacing(xxs);"
+
+@function spacing($size) {
+  @if map-has-key(v.$spacing-values, $size) {
+    @return map-get(v.$spacing-values, $size);
+  }
+}
+
+// background image mixin
+
+@mixin bg-image($name) {
+  background-image: url("/starter-code/assets/#{$name}/background-#{$name}-mobile.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+
+  @include responsive(tablet) {
+    background-image: url("/starter-code/assets/#{$name}/background-#{$name}-tablet.jpg");
+  }
+
+  @include responsive(desktop) {
+    background-image: url("/starter-code/assets/#{$name}/background-#{$name}-desktop.jpg");
+  }
+}
