@@ -1,0 +1,33 @@
+@use "variables" as v;
+
+.bg__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg__home,
+.bg__des,
+.bg__crew,
+.bg__tech {
+  @extend .bg__img;
+}
+
+.bg__home {
+  @include v.bg-image(home);
+}
+
+.bg__des {
+  @include v.bg-image(destination);
+}
+
+.bg__crew {
+  @include v.bg-image(crew);
+}
+
+.bg__tech {
+  @include v.bg-image(technology);
+}

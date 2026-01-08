@@ -12,8 +12,13 @@
 
 :root {
   --primary-color: #{v.$white};
-  --secondary-color: #{v.$lightBlue};
-  --background-color: #{v.$darkBLue};
+  --secondary-color: #{v.$blue-300};
+  --background-color: #{v.$blue-900};
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 //.on FOR NAV AND TABS

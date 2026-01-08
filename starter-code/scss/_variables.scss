@@ -103,8 +103,8 @@ $spacing-values: (
 
 // Colors
 
-$darkBLue: hsl(230, 35%, 7%);
-$lightBlue: hsl(231, 77%, 90%);
+$blue-900: hsl(230, 35%, 7%);
+$blue-300: hsl(231, 77%, 90%);
 $white: hsl(0, 0%, 100%);
 
 //media queries
@@ -160,5 +160,24 @@ $breakpoints: (
 @function spacing($size) {
   @if map-has-key($spacing-values, $size) {
     @return map-get($spacing-values, $size);
+  }
+}
+
+// background image mixin
+
+@mixin bg-image($name) {
+  background-image: url("/starter-code/assets/#{$name}/background-#{$name}-mobile.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+
+  @include responsive(tablet) {
+    background-image: url("/starter-code/assets/#{$name}/background-#{$name}-tablet.jpg");
+  }
+
+  @include responsive(desktop) {
+    background-image: url("/starter-code/assets/#{$name}/background-#{$name}-desktop.jpg");
   }
 }
