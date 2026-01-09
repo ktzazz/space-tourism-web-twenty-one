@@ -1,56 +1,63 @@
+@use "sass:math";
+
+// px to rem function
+@function rem($pixels, $context: 16) {
+  @return math.div($pixels, $context) * 1rem;
+}
+
 // Font settings
 
 $bellefair-settings: (
   "family": "Bellefair, serif",
   "preset-1-fs": (
-    "desktop": 144px,
-    "mobile": 80px,
+    "desktop": rem(144),
+    "mobile": rem(80),
   ),
   "preset-2-fs": (
-    "desktop": 100px,
-    "tablet": 80px,
-    "mobile": 56px,
+    "desktop": rem(100),
+    "tablet": rem(80),
+    "mobile": rem(56),
   ),
   "preset-3-fs": (
-    "desktop": 56px,
-    "tablet": 40px,
-    "mobile": 24px,
+    "desktop": rem(56),
+    "tablet": rem(40),
+    "mobile": rem(24),
   ),
   "preset-4-fs": (
-    "desktop": 32px,
-    "tablet": 24px,
-    "mobile": 18px,
+    "desktop": rem(32),
+    "tablet": rem(24),
+    "mobile": rem(18),
   ),
   "preset-6-fs": (
-    "desktop": 28px,
-    "mobile": 16px,
+    "desktop": rem(28),
+    "mobile": rem(16),
   ),
 );
 
 $barlowCondensed-settings: (
   "family": "Barlow Condensed, sans-serif",
   "preset-5-fs": (
-    "desktop": 28px,
-    "tablet": 20px,
-    "letter-spacing": 4.75px,
+    "desktop": rem(28),
+    "tablet": rem(20),
+    "letter-spacing": rem(4.75),
   ),
   "preset-7-fs": (
-    "desktop": 14px,
-    "letter-spacing": 2.35px,
+    "desktop": rem(14),
+    "letter-spacing": rem(2.35),
   ),
   "preset-8-fs": (
-    "desktop": 16px,
-    "mobile": 14px,
-    "letter-spacing": 2.7px,
+    "desktop": rem(16),
+    "mobile": rem(14),
+    "letter-spacing": rem(2.7),
   ),
 );
 
 $barlow-settings: (
   "family": "Barlow, sans-serif",
   "preset-9-fs": (
-    "desktop": 18px,
-    "tablet": 16px,
-    "mobile": 15px,
+    "desktop": mem(18),
+    "tablet": rem(16),
+    "mobile": rem(15),
     "line-height": 1.8,
   ),
 );
@@ -58,19 +65,19 @@ $barlow-settings: (
 // Spacing
 
 $spacing-values: (
-  "xxs": 2px,
-  "xs": 4px,
-  "s": 8px,
-  "ms": 12px,
-  "m": 16px,
-  "ml": 24px,
-  "l": 32px,
-  "xl": 40px,
-  "xxl": 48px,
-  "xxxl": 64px,
-  "huge": 80px,
-  "extra-huge": 96px,
-  "max-desktop": 128px,
+  "xxs": rem(2),
+  "xs": rem(4),
+  "s": rem(8),
+  "ms": rem(12),
+  "m": rem(16),
+  "ml": rem(24),
+  "l": rem(32),
+  "xl": rem(40),
+  "xxl": rem(48),
+  "xxxl": rem(64),
+  "huge": rem(80),
+  "extra-huge": rem(96),
+  "max-desktop": rem(128),
 );
 
 // Colors

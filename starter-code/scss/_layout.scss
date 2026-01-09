@@ -1,4 +1,16 @@
 @use "variables" as v;
+@use "mixins" as m;
+
+//header
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: m.spacing(ml);
+}
+
+// background imgs
 
 .bg__img {
   position: absolute;
@@ -17,17 +29,31 @@
 }
 
 .bg__home {
-  @include v.bg-image(home);
+  @include m.bg-image(home);
 }
 
 .bg__des {
-  @include v.bg-image(destination);
+  @include m.bg-image(destination);
 }
 
 .bg__crew {
-  @include v.bg-image(crew);
+  @include m.bg-image(crew);
 }
 
 .bg__tech {
-  @include v.bg-image(technology);
+  @include m.bg-image(technology);
+}
+
+// section images
+
+.d__img,
+.c__img,
+.t__img {
+  display: block;
+  width: 100%;
+  max-width: 445px;
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }

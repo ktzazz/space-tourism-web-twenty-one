@@ -1,6 +1,7 @@
 /* global styles */
 
 @use "variables" as v;
+@use "mixins" as m;
 
 *,
 *::before,
@@ -21,38 +22,7 @@ body {
   color: var(--primary-color);
 }
 
-//.on FOR NAV AND TABS
-.on {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-}
-
-//.onBtn FOR BTNS
-.onBtn {
-  background-color: red;
-  color: var(--primary-color);
-}
-
-.inactive {
-  display: none;
-}
-
-.active {
-  display: block;
-}
-
-.d__img,
-.c__img,
-.t__img {
-  // 1. Hacerlo un cuadrado
-  display: block;
-  // 2. Darle tamaño (ajusta según tu diseño de Figma)
-  width: 100%; // Ocupa el ancho de su contenedor
-  max-width: 445px; // Tamaño máximo para que no se pixele
-  aspect-ratio: 1 / 1; // Lo hace un cuadrado perfecto (ideal para planetas)
-
-  // 3. Ajustar la imagen de fondo
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+li {
+  list-style-type: none;
+  cursor: pointer;
 }

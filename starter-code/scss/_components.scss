@@ -1,0 +1,8 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+.logo {
+  display: block;
+  width: m.spacing(xl);
+  height: m.spacing(xl);
+}

@@ -1,6 +1,8 @@
 /* main compilator */
 
+@use "activeStates";
 @use "base";
+@use "components";
 @use "layout";
 @use "mixins";
 @use "typography";
