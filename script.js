@@ -30,9 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
       sections[index].classList.remove("inactive");
       sections[index].classList.add("active");
       menuOptions.forEach((option) => {
-        option.classList.remove("on");
+        option.classList.remove("navOn");
       });
-      option.classList.add("on");
+      option.classList.add("navOn");
     });
   });
 
@@ -95,9 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
       tab.textContent = destinationsData[index].name;
       tab.addEventListener("click", () => {
         dTabs.forEach((tab) => {
-          tab.classList.remove("on");
+          tab.classList.remove("planetOn");
         });
-        tab.classList.add("on");
+        tab.classList.add("planetOn");
         updateDestination(index);
       });
     });

@@ -1,31 +1,49 @@
 @use "variables" as v;
 
-//.on FOR NAV AND TABS
-.on {
+// menu__item and navOn for HEADER
+.menu__item:not(.navOn) {
+  color: var(--primary-color);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  }
+
+  &:hover::after {
+    opacity: 0.7;
+  }
+}
+
+.navOn {
+  color: var(--primary-color);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 1;
+  }
+}
+
+// on for destination PLANETS
+
+.planetOn {
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
-
-/*  text-decoration: none;
-        color: var(--primary-color);
-        position: relative;
-    }
-    & li a::after{
-         content: ""; 
-         position: absolute;
-         top: 150%;
-         left: 25%;
-         width: 50%; 
-         height: 3px;
-         background-color: var(--primary-color);
-         transform: scaleX(0);
-         transform-origin: bottom center;
-         transition: transform 0.3s ease-out;
-    }
-    & li a:hover::after{
-        transform: scaleX(1);
-    }
-} */
 
 //.onBtn FOR BTNS
 .onBtn {
