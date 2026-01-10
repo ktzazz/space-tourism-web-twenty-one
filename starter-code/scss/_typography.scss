@@ -1,8 +1,14 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+// fonts
+
 @font-face {
   font-family: "Barlow Condensed";
-  src: url("starter-code/assets/fonts/BarlowCondensed-Regular.woff2")
+  src: url("/starter-code/assets/fonts/BarlowCondensed-Regular.woff2")
       format("woff2"),
-    url("starter-code/assets/fonts/BarlowCondensed-Regular.woff") format("woff");
+    url("/starter-code/assets/fonts/BarlowCondensed-Regular.woff")
+      format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,8 +16,8 @@
 
 @font-face {
   font-family: "Barlow";
-  src: url("starter-code/assets/fonts/Barlow-Regular.woff2") format("woff2"),
-    url("starter-code/assets/fonts/Barlow-Regular.woff") format("woff");
+  src: url("/starter-code/assets/fonts/Barlow-Regular.woff2") format("woff2"),
+    url("/starter-code/assets/fonts/Barlow-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -19,9 +25,19 @@
 
 @font-face {
   font-family: "Bellefair";
-  src: url("starter-code/assets/fonts/Bellefair-Regular.woff2") format("woff2"),
-    url("starter-code/assets/fonts/Bellefair-Regular.woff") format("woff");
+  src: url("/starter-code/assets/fonts/Bellefair-Regular.woff2") format("woff2"),
+    url("/starter-code/assets/fonts/Bellefair-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+// font css
+
+.nav__menu {
+  @include m.set-preset(v.$barlowCondensed-settings, "preset-8-fs");
+  text-transform: uppercase;
+}
+.menu__number {
+  font-weight: 700;
 }

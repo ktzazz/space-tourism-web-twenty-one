@@ -15,14 +15,16 @@
   --primary-color: #{v.$white};
   --secondary-color: #{v.$blue-300};
   --background-color: #{v.$blue-900};
+  --background-blur: #{v.$blue-blur};
 }
 
 body {
   background-color: var(--background-color);
   color: var(--primary-color);
+  overflow-x: hidden;
 }
 
 li {
-  list-style-type: none;
+  list-style: none;
   cursor: pointer;
 }

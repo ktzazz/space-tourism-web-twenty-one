@@ -1,8 +1,21 @@
 @use "variables" as v;
 @use "mixins" as m;
 
+// header
+
 .logo {
   display: block;
   width: m.spacing(xl);
   height: m.spacing(xl);
+}
+
+.header__nav {
+  background-color: var(--background-blur);
+  backdrop-filter: blur(40px);
+}
+
+.hamburger__button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

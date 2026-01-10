@@ -8,7 +8,10 @@
 // Font settings
 
 $bellefair-settings: (
-  "family": "Bellefair, serif",
+  "family": (
+    "Bellefair",
+    serif,
+  ),
   "preset-1-fs": (
     "desktop": rem(144),
     "mobile": rem(80),
@@ -35,7 +38,10 @@ $bellefair-settings: (
 );
 
 $barlowCondensed-settings: (
-  "family": "Barlow Condensed, sans-serif",
+  "family": (
+    "Barlow Condensed",
+    sans-serif,
+  ),
   "preset-5-fs": (
     "desktop": rem(28),
     "tablet": rem(20),
@@ -53,7 +59,10 @@ $barlowCondensed-settings: (
 );
 
 $barlow-settings: (
-  "family": "Barlow, sans-serif",
+  "family": (
+    "Barlow",
+    sans-serif,
+  ),
   "preset-9-fs": (
     "desktop": mem(18),
     "tablet": rem(16),
@@ -85,6 +94,7 @@ $spacing-values: (
 $blue-900: hsl(230, 35%, 7%);
 $blue-300: hsl(231, 77%, 90%);
 $white: hsl(0, 0%, 100%);
+$blue-blur: hsla(230, 35%, 7%, 0.15);
 
 //media queries
 

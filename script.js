@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   //mobile menu
-  const hamburger = document.querySelector(".hamburger__button");
+  const hamburger = document.querySelectorAll(".hamburger__button");
   const mobileOpen = document.querySelector(".btn__open");
   const mobileClose = document.querySelector(".btn__close");
   const mobileMenu = document.querySelector(".header__nav");
@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     overlay.classList.toggle("inactive");
   }
 
-  hamburger.addEventListener("click", toggleMobileMenu);
+  hamburger.forEach((hamburger) => {
+    hamburger.addEventListener("click", toggleMobileMenu);
+  });
 
   // sections tab
   const menuOptions = document.querySelectorAll(".menu__item");
