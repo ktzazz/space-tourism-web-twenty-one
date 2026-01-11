@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function loadData() {
     // función asíncrona permite que el código espere a que los datos lleguen sin trabar la página
-    const response = await fetch("/starter-code/data.json"); // await hace que la variable no guarde nada hasta que fetch regrese con la info. El primer await trae la respuesta del servidor
+    const response = await fetch("./starter-code/data.json"); // await hace que la variable no guarde nada hasta que fetch regrese con la info. El primer await trae la respuesta del servidor
     const data = await response.json(); // El segundo await convierte el cuerpo de esa respuesta a algo legible para js.
     // response: Es la respuesta del servidor.
     // data: Es la transformación de esa respuesta en algo que JS pueda usar (objetos y listas).
