@@ -52,7 +52,7 @@
 // background image mixin
 
 @mixin bg-image($name) {
-  background-image: url("/starter-code/assets/#{$name}/background-#{$name}-mobile.jpg");
+  background-image: url(".../starter-code/assets/#{$name}/background-#{$name}-mobile.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,10 +60,10 @@
   width: 100%;
 
   @include responsive(tablet) {
-    background-image: url("/starter-code/assets/#{$name}/background-#{$name}-tablet.jpg");
+    background-image: url(".../starter-code/assets/#{$name}/background-#{$name}-tablet.jpg");
   }
 
   @include responsive(desktop) {
-    background-image: url("/starter-code/assets/#{$name}/background-#{$name}-desktop.jpg");
+    background-image: url(".../starter-code/assets/#{$name}/background-#{$name}-desktop.jpg");
   }
 }
