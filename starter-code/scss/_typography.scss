@@ -34,10 +34,52 @@
 
 // font css
 
+//header
 .nav__menu {
   @include m.set-preset(v.$barlowCondensed-settings, "preset-8-fs");
   text-transform: uppercase;
 }
 .menu__number {
   font-weight: 700;
+}
+
+// general
+
+.weight_up {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+// home
+
+h1 {
+  @include m.set-preset(v.$barlowCondensed-settings, "h1-fs");
+  @extend .weight_up;
+}
+
+h2 {
+  @include m.set-preset(v.$bellefair-settings, "preset-1-fs");
+  @extend .weight_up;
+}
+
+.main__p {
+  @include m.set-preset(v.$barlow-settings, "preset-9-fs");
+  font-weight: 500;
+}
+
+.main__button {
+  @include m.set-preset(v.$bellefair-settings, "preset-4-fs");
+  @extend .weight_up;
+}
+
+//footer
+
+footer {
+  @include m.set-preset(v.$barlowCondensed-settings, "footer-fs");
+  text-transform: uppercase;
+  & a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 600;
+  }
 }

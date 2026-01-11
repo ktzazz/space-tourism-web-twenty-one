@@ -21,10 +21,18 @@
 body {
   background-color: var(--background-color);
   color: var(--primary-color);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 li {
   list-style: none;
   cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  bottom: m.spacing(m);
+  width: 100%;
+  text-align: center;
+  padding-inline: m.spacing(ml);
 }

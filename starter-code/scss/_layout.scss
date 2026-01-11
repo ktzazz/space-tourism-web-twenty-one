@@ -45,6 +45,41 @@ header {
   margin-inline-start: m.spacing(ml);
 }
 
+// sections
+
+.padding {
+  padding-inline: m.spacing(ml);
+  @include m.responsive(tablet) {
+    padding-inline: m.spacing(xl);
+  }
+  @include m.responsive(desktop) {
+    padding-inline: m.spacing(max-desktop);
+  }
+}
+
+// home
+
+.section__home {
+  @extend .padding;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  margin-block-start: m.spacing(ml);
+}
+
+.main__intro {
+  display: flex;
+  flex-direction: column;
+  gap: m.spacing(m);
+}
+
+.main__explore {
+  align-self: flex-end;
+  margin-block-end: m.spacing(m);
+}
+
 // background imgs
 
 .bg__img {

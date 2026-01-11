@@ -19,3 +19,12 @@
   border: none;
   cursor: pointer;
 }
+
+.main__button {
+  background-color: var(--primary-color);
+  width: v.rem(144);
+  height: v.rem(144);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
