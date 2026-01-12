@@ -17,7 +17,6 @@
   --background-color: #{v.$blue-900};
   --background-blur: #{v.$blue-blur};
 }
-
 body {
   display: flex;
   flex-direction: column;
@@ -27,14 +26,14 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
+  min-height: 100dvh; // for bug on mobile
 }
 
 main {
-  flex: 1;
+  flex: 1; // pushes the footer to the bottom
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
 }
 
 li {
@@ -43,11 +42,8 @@ li {
 }
 
 footer {
-  position: absolute;
-  left: 0;
-  transform: translate-X(-50%);
-  bottom: m.spacing(ms);
   width: 100%;
   text-align: center;
+  padding-block: m.spacing(ms);
   padding-inline: m.spacing(ml);
 }

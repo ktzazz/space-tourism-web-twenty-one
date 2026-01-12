@@ -67,7 +67,7 @@ header {
   justify-items: center;
   text-align: center;
   margin-block-start: m.spacing(ml);
-  overflow-y: hidden;
+  min-height: 100%;
 }
 
 .main__intro {
@@ -84,7 +84,7 @@ header {
 // background imgs
 
 .bg__img {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;

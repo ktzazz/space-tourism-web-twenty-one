@@ -55,8 +55,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
 
   @include responsive(tablet) {
     background-image: url("../starter-code/assets/#{$name}/background-#{$name}-tablet.jpg");
