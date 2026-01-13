@@ -17,12 +17,17 @@
   --background-color: #{v.$blue-900};
   --background-blur: #{v.$blue-blur};
 }
+
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   display: flex;
   flex-direction: column;
   background-color: var(--background-color);
   color: var(--primary-color);
-  overflow-x: hidden;
   position: relative;
   width: 100%;
   min-height: 100vh;
