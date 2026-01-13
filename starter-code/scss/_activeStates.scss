@@ -1,4 +1,5 @@
 @use "variables" as v;
+@use "mixins" as m;
 
 // menu__item and navOn for HEADER
 .menu__item:not(.navOn) {
@@ -15,6 +16,13 @@
     background-color: var(--primary-color);
     opacity: 0;
     transition: opacity 0.5s ease-out;
+
+    @include m.responsive(tablet) {
+      width: 100%;
+      height: 3px;
+      top: auto;
+      bottom: 0;
+    }
   }
 
   &:hover::after {
@@ -35,6 +43,13 @@
     height: 100%;
     background-color: var(--primary-color);
     opacity: 1;
+
+    @include m.responsive(tablet) {
+      width: 100%;
+      height: 3px;
+      top: auto;
+      bottom: 0;
+    }
   }
 }
 

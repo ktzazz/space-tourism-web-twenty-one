@@ -7,11 +7,26 @@
   display: block;
   width: m.spacing(xl);
   height: m.spacing(xl);
+  @include m.responsive(tablet) {
+    width: m.spacing(xxl);
+    height: m.spacing(xxl);
+    align-items: center;
+  }
 }
 
 .header__nav {
   background-color: var(--background-blur);
   backdrop-filter: blur(40px);
+  @include m.responsive(tablet) {
+    background-color: var(--white-blur);
+  }
+}
+
+.header__hamburger,
+.hamburger__button {
+  @include m.responsive(tablet) {
+    display: none;
+  }
 }
 
 .hamburger__button {
@@ -22,9 +37,14 @@
 
 .main__button {
   background-color: var(--primary-color);
-  width: v.rem(144);
-  height: v.rem(144);
   border-radius: 50%;
   border: none;
   cursor: pointer;
+  width: v.rem(144);
+  height: v.rem(144);
+
+  @include m.responsive(tablet) {
+    width: v.rem(272);
+    height: v.rem(272);
+  }
 }

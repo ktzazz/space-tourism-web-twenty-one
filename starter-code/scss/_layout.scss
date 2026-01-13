@@ -8,6 +8,17 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: m.spacing(ml);
+  @include m.responsive(tablet) {
+    padding: 0;
+  }
+}
+
+.header__logo {
+  @include m.responsive(tablet) {
+    display: flex;
+    align-self: center;
+    margin-inline-start: m.spacing(xl);
+  }
 }
 
 .header__nav {
@@ -21,6 +32,19 @@ header {
   transition: transform 0.6s linear;
   padding: m.spacing(ml) 0 0 m.spacing(l);
   z-index: 10;
+
+  @include m.responsive(tablet) {
+    position: relative;
+    width: 83.5%;
+    height: auto;
+    transform: translate(0%);
+    visibility: visible;
+    padding: 0;
+    transition: none;
+  }
+  @include m.responsive(desktop) {
+    width: 60%;
+  }
 }
 .open {
   transform: translateX(0%);
@@ -39,6 +63,17 @@ header {
   flex-direction: column;
   margin-block-start: m.spacing(xxl);
   gap: m.spacing(l);
+
+  @include m.responsive(tablet) {
+    flex-direction: row;
+    margin: 0 m.spacing(xl) 0 0;
+    height: m.spacing(extra-huge);
+    justify-content: end;
+  }
+
+  @include m.responsive(desktop) {
+    margin: 0 m.spacing(xxxl) 0 0;
+  }
 }
 
 .menu__t {
@@ -46,6 +81,18 @@ header {
   position: absolute;
   left: 0;
   margin-inline-start: m.spacing(ml);
+
+  @include m.responsive(tablet) {
+    position: relative;
+    margin-inline-start: m.spacing(s);
+  }
+}
+
+.menu__item {
+  @include m.responsive(tablet) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 // sections
@@ -71,6 +118,9 @@ header {
   text-align: center;
   margin-block-start: m.spacing(ml);
   min-height: 100%;
+  @include m.responsive(tablet) {
+    margin-block-start: m.spacing(max-desktop);
+  }
 }
 
 .main__intro {
@@ -80,8 +130,11 @@ header {
 }
 
 .main__explore {
-  align-self: flex-end;
+  align-self: center;
   margin-block-end: m.spacing(m);
+  @include m.responsive(tablet) {
+    margin-block-start: v.rem(66);
+  }
 }
 
 // background imgs
