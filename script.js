@@ -35,8 +35,36 @@ document.addEventListener("DOMContentLoaded", function () {
         option.classList.remove("navOn");
       });
       option.classList.add("navOn");
+      logoState(index);
     });
   });
+
+  // home buttons
+
+  const logo = document.querySelector(".header__logo");
+  const btnExplore = document.querySelector(".main__explore");
+
+  logo.addEventListener("click", () => {
+    if (logo.classList.contains("clickable")) {
+      menuOptions[0].click(); // activates the logic that home already has (navOn)
+    }
+  });
+
+  btnExplore.addEventListener("click", () => {
+    menuOptions[1].click(); // activates the logic that destination already has (navOn)
+  });
+
+  function logoState(index) {
+    if (index === 0) {
+      // if we´re at home the clic won't work
+      logo.classList.remove("clickable");
+    } else {
+      // if we aren't, it will work
+      logo.classList.add("clickable");
+    }
+  }
+
+  logoState(0);
 
   //destination fetch json
   const dName = document.querySelector(".d__name");
