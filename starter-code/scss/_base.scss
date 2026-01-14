@@ -17,6 +17,8 @@
   --background-color: #{v.$blue-900};
   --background-blur: #{v.$blue-blur};
   --white-blur: #{v.$white-blur};
+  --btn-hover: #{v.$button-hover};
+  --btn-hover-txt: #{v.$btn-hover-txt};
 }
 
 html,
@@ -38,7 +40,8 @@ body {
 main {
   flex: 1; // pushes the footer to the bottom
   display: flex;
-  flex-direction: column;
+  /*   flex-direction: column;
+ */
   width: 100%;
 }
 

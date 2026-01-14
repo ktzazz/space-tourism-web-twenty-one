@@ -11,6 +11,9 @@ header {
   @include m.responsive(tablet) {
     padding: 0;
   }
+  @include m.responsive(desktop) {
+    padding-block-start: m.spacing(xl);
+  }
 }
 
 .header__logo {
@@ -18,6 +21,9 @@ header {
     display: flex;
     align-self: center;
     margin-inline-start: m.spacing(xl);
+  }
+  @include m.responsive(desktop) {
+    margin-inline-start: m.spacing(xxxl);
   }
 }
 
@@ -100,10 +106,10 @@ header {
 .padding {
   padding-inline: m.spacing(ml);
   @include m.responsive(tablet) {
-    padding-inline: m.spacing(xl);
+    padding-inline: v.rem(120);
   }
   @include m.responsive(desktop) {
-    padding-inline: m.spacing(max-desktop);
+    padding-inline: v.rem(150);
   }
 }
 
@@ -112,7 +118,7 @@ header {
 .section__home {
   @extend .padding;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-columns: 1fr;
   justify-items: center;
   text-align: center;
@@ -121,19 +127,31 @@ header {
   @include m.responsive(tablet) {
     margin-block-start: m.spacing(max-desktop);
   }
+  @include m.responsive(desktop) {
+    grid-template-rows: 1fr;
+    grid-template-columns: auto auto;
+    text-align: left;
+    align-items: end;
+    width: 100%;
+    justify-content: space-between;
+    margin-block-end: m.spacing(max-desktop);
+  }
 }
 
 .main__intro {
   display: flex;
   flex-direction: column;
   gap: m.spacing(m);
+
+  @include m.responsive(desktop) {
+    width: v.rem(540);
+  }
 }
 
 .main__explore {
-  align-self: center;
-  margin-block-end: m.spacing(m);
-  @include m.responsive(tablet) {
-    margin-block-start: v.rem(66);
+  margin-block: v.rem(84);
+  @include m.responsive(desktop) {
+    margin-block: 0;
   }
 }
 
