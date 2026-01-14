@@ -13,6 +13,20 @@ header {
   }
   @include m.responsive(desktop) {
     padding-block-start: m.spacing(xl);
+    position: relative;
+  }
+}
+
+header::after {
+  @include m.responsive(desktop) {
+    content: "";
+    position: absolute;
+    top: v.rem(88);
+    left: v.rem(174);
+    width: calc(40% - 8rem);
+    height: v.rem(1);
+    background-color: var(--line-nav);
+    z-index: 11;
   }
 }
 

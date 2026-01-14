@@ -38,6 +38,8 @@
   background-color: var(--primary-color);
   border-radius: 50%;
   border: none;
+  color: var(--background-color);
+  transition: color 0.5s ease-out;
   cursor: pointer;
   width: v.rem(144);
   height: v.rem(144);
