@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   //mobile menu
-  const hamburger = document.querySelectorAll(".hamburger__button");
   const mobileOpen = document.querySelector(".btn__open");
   const mobileClose = document.querySelector(".btn__close");
   const mobileMenu = document.querySelector(".header__nav");
@@ -8,14 +7,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function toggleMobileMenu() {
     mobileOpen.classList.toggle("inactive");
-    mobileClose.classList.toggle("inactive");
     mobileMenu.classList.toggle("open");
-    overlay.classList.toggle("inactive");
+    document.body.classList.toggle("no-scroll");
+    overlay.classList.toggle("noOverlay");
+    mobileMenu.classList.remove("menuClosed");
   }
 
-  hamburger.forEach((hamburger) => {
-    hamburger.addEventListener("click", toggleMobileMenu);
+  mobileOpen.addEventListener("click", toggleMobileMenu);
+
+  mobileClose.addEventListener("click", () => {
+    mobileMenu.classList.add("menuClosed");
   });
+
+  overlay.addEventListener("click", toggleMobileMenu);
 
   // sections tab
   const menuOptions = document.querySelectorAll(".menu__item");
