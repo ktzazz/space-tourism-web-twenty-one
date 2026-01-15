@@ -6,20 +6,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const overlay = document.querySelector(".overlay");
 
   function toggleMobileMenu() {
-    mobileOpen.classList.toggle("inactive");
-    mobileMenu.classList.toggle("open");
-    document.body.classList.toggle("no-scroll");
-    overlay.classList.toggle("noOverlay");
+    mobileOpen.classList.add("inactive");
+    document.body.classList.add("no-scroll");
+    overlay.classList.remove("noOverlay");
     mobileMenu.classList.remove("menuClosed");
+    mobileMenu.classList.add("open");
   }
 
   mobileOpen.addEventListener("click", toggleMobileMenu);
 
-  mobileClose.addEventListener("click", () => {
+  function closeMobileMenu() {
     mobileMenu.classList.add("menuClosed");
-  });
+    mobileOpen.classList.remove("inactive");
+    overlay.classList.add("noOverlay");
+    document.body.classList.remove("no-scroll");
 
-  overlay.addEventListener("click", toggleMobileMenu);
+    mobileMenu.addEventListener("transitionend", function backToDefault() {
+      mobileMenu.classList.remove("open");
+      mobileMenu.removeEventListener("transitionend", backToDefault);
+    });
+  }
+
+  mobileClose.addEventListener("click", closeMobileMenu);
+
+  overlay.addEventListener("click", closeMobileMenu);
 
   // sections tab
   const menuOptions = document.querySelectorAll(".menu__item");
@@ -40,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       option.classList.add("navOn");
       logoState(index);
+      closeMobileMenu();
     });
   });
 
