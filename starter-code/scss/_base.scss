@@ -27,6 +27,10 @@ body {
   overflow-x: hidden;
 }
 
+header {
+  z-index: 100;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -41,8 +45,6 @@ body {
 main {
   flex: 1; // pushes the footer to the bottom
   display: flex;
-  /*   flex-direction: column;
- */
   width: 100%;
 }
 
@@ -56,4 +58,5 @@ footer {
   text-align: center;
   padding-block: m.spacing(ms);
   padding-inline: m.spacing(ml);
+  isolation: isolate;
 }

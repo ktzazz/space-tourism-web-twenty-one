@@ -5,6 +5,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMenu = document.querySelector(".header__nav");
   const overlay = document.querySelector(".overlay");
 
+  const mobileResponsive = window.matchMedia("(max-width: 47.5em)");
+
+  function mobileSize(e) {
+    if (e.matches) {
+      mobileMenu.classList.add("menuClosed");
+    } else {
+      mobileMenu.classList.remove("menuClosed", "open");
+      overlay.classList.add("noOverlay");
+      document.body.classList.remove("no-scroll");
+      mobileOpen.classList.remove("inactive");
+    }
+  }
+
+  mobileResponsive.addEventListener("change", mobileSize);
+
+  mobileSize(mobileResponsive);
+
   function toggleMobileMenu() {
     mobileOpen.classList.add("inactive");
     document.body.classList.add("no-scroll");
@@ -12,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenu.classList.remove("menuClosed");
     mobileMenu.classList.add("open");
   }
-
-  mobileOpen.addEventListener("click", toggleMobileMenu);
 
   function closeMobileMenu() {
     mobileMenu.classList.add("menuClosed");
@@ -27,30 +42,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  mobileOpen.addEventListener("click", toggleMobileMenu);
   mobileClose.addEventListener("click", closeMobileMenu);
-
   overlay.addEventListener("click", closeMobileMenu);
 
   // sections tab
   const menuOptions = document.querySelectorAll(".menu__item");
   const sections = document.querySelectorAll("section");
 
+  console.log(sections);
+
   menuOptions.forEach((option, index) => {
     option.addEventListener("click", () => {
       // all the sections will turn off
       sections.forEach((section) => {
-        section.classList.add("inactive");
-        section.classList.remove("active");
+        section.classList.add("sectionOFF");
+        section.classList.remove("selected");
       });
       // the section that go with the index will turn on
-      sections[index].classList.remove("inactive");
-      sections[index].classList.add("active");
+      sections[index].classList.remove("sectionOFF");
+      sections[index].classList.add("selected");
       menuOptions.forEach((option) => {
         option.classList.remove("navOn");
       });
       option.classList.add("navOn");
+
       logoState(index);
-      closeMobileMenu();
+      if (mobileMenu.classList.contains("open")) {
+        closeMobileMenu();
+      }
     });
   });
 

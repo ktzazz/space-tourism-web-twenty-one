@@ -101,6 +101,25 @@
   transition: background-color 0.7s, color 0.5s ease-out;
 }
 
+// animation for the selected section
+
+.sectionOFF {
+  display: none !important;
+}
+
+.selected {
+  animation: appear 0.7s ease-out forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 // on for destination PLANETS
 
 .planetOn {
@@ -115,7 +134,7 @@
 }
 
 .inactive {
-  display: none !important;
+  display: none;
 }
 
 .active {
