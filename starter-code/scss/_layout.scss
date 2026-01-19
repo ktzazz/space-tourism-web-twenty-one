@@ -168,7 +168,8 @@ header::after {
 }
 
 .main__explore {
-  margin-block: v.rem(84);
+  align-self: center;
+  margin-block: m.spacing(huge);
   @include m.responsive(desktop) {
     margin-block: 0;
   }
