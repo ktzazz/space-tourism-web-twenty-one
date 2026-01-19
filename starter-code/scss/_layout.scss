@@ -168,7 +168,7 @@ header::after {
 }
 
 .main__explore {
-  margin-block: clamp(v.rem(84), 20% + 2rem, 25%);
+  margin-block: v.rem(84);
   @include m.responsive(desktop) {
     margin-block: 0;
   }
