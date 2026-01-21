@@ -53,6 +53,46 @@
   }
 }
 
+// destintation planets tab
+
+.d__tab:not(.planetOn) {
+  color: var(--primary-color);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    width: 93%;
+    height: 3px;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    margin-block-start: v.rem(13);
+  }
+
+  &:hover::after {
+    opacity: 0.7;
+  }
+}
+
+.planetOn {
+  color: var(--primary-color);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    left: 0;
+    width: 93%;
+    height: 3px;
+    background-color: var(--primary-color);
+    opacity: 1;
+  }
+}
+
 // logo
 
 .header__logo {
@@ -98,7 +138,9 @@
 .main__button:hover,
 .main__button:hover::after {
   color: var(--btn-hover-txt);
-  transition: background-color 0.7s, color 0.5s ease-out;
+  transition:
+    background-color 0.7s,
+    color 0.5s ease-out;
 }
 
 // animation for the selected section
@@ -118,13 +160,6 @@
   to {
     opacity: 1;
   }
-}
-
-// on for destination PLANETS
-
-.planetOn {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
 }
 
 //.onBtn FOR BTNS
@@ -150,8 +185,6 @@
 .no-scroll {
   overflow: hidden;
   position: fixed;
-  width: 100%;
-  height: 100%;
 }
 
 .overlay {

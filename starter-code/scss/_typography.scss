@@ -5,7 +5,8 @@
 
 @font-face {
   font-family: "Barlow Condensed";
-  src: url("../starter-code/assets/fonts/BarlowCondensed-Regular.woff2")
+  src:
+    url("../starter-code/assets/fonts/BarlowCondensed-Regular.woff2")
       format("woff2"),
     url("../starter-code/assets/fonts/BarlowCondensed-Regular.woff")
       format("woff");
@@ -16,7 +17,8 @@
 
 @font-face {
   font-family: "Barlow";
-  src: url("../starter-code/assets/fonts/Barlow-Regular.woff2") format("woff2"),
+  src:
+    url("../starter-code/assets/fonts/Barlow-Regular.woff2") format("woff2"),
     url("../starter-code/assets/fonts/Barlow-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -25,8 +27,8 @@
 
 @font-face {
   font-family: "Bellefair";
-  src: url("../starter-code/assets/fonts/Bellefair-Regular.woff2")
-      format("woff2"),
+  src:
+    url("../starter-code/assets/fonts/Bellefair-Regular.woff2") format("woff2"),
     url("../starter-code/assets/fonts/Bellefair-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -51,6 +53,11 @@
   text-transform: uppercase;
 }
 
+.parragraph__description {
+  @include m.set-preset(v.$barlow-settings, "preset-9-fs");
+  font-weight: 500;
+}
+
 // home
 
 h1 {
@@ -58,18 +65,51 @@ h1 {
   @extend .weight_up;
 }
 
-h2 {
+.main__title {
   @include m.set-preset(v.$bellefair-settings, "preset-1-fs");
   @extend .weight_up;
 }
 
 .main__p {
-  @include m.set-preset(v.$barlow-settings, "preset-9-fs");
-  font-weight: 500;
+  @extend .parragraph__description;
 }
 
 .main__button {
   @include m.set-preset(v.$bellefair-settings, "preset-4-fs");
+  @extend .weight_up;
+}
+
+// destinations
+
+.section__title {
+  @include m.set-preset(v.$barlowCondensed-settings, "preset-5-fs");
+  @extend .weight_up;
+}
+
+.d__name,
+.c__name,
+.t__name {
+  @include m.set-preset(v.$bellefair-settings, "preset-2-fs");
+  @extend .weight_up;
+}
+
+.d__tab {
+  @include m.set-preset(v.$barlowCondensed-settings, "preset-8-fs");
+  @extend .weight_up;
+}
+
+.d__description {
+  @extend .parragraph__description;
+}
+
+.d__item {
+  @include m.set-preset(v.$barlowCondensed-settings, "preset-7-fs");
+  @extend .weight_up;
+}
+
+.d__distance,
+.d__travel {
+  @include m.set-preset(v.$bellefair-settings, "preset-6-fs");
   @extend .weight_up;
 }
 

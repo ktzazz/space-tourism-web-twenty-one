@@ -34,6 +34,8 @@ $bellefair-settings: (
   ),
   "preset-6-fs": (
     "desktop": rem(28),
+    "tablet": rem(28),
+    "mobile": rem(28),
   ),
 );
 
@@ -51,14 +53,18 @@ $barlowCondensed-settings: (
   "preset-5-fs": (
     "desktop": rem(28),
     "tablet": rem(20),
+    "mobile": rem(16),
     "letter-spacing": rem(4.75),
   ),
   "preset-7-fs": (
     "desktop": rem(14),
+    "tablet": rem(14),
+    "mobile": rem(14),
     "letter-spacing": rem(2.35),
   ),
   "preset-8-fs": (
     "desktop": rem(16),
+    "tablet": rem(16),
     "mobile": rem(14),
     "letter-spacing": rem(2.7),
   ),
