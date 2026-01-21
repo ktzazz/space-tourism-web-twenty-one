@@ -93,6 +93,21 @@
   }
 }
 
+// planet animation
+
+.planetFadeIn {
+  animation: planetEntrance 0.7s ease-out;
+}
+
+@keyframes planetEntrance {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 // logo
 
 .header__logo {
@@ -150,7 +165,7 @@
 }
 
 .selected {
-  animation: appear 0.7s ease-out forwards;
+  animation: appear 0.7s ease-out;
 }
 
 @keyframes appear {

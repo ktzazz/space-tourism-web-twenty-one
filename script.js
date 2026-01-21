@@ -138,11 +138,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loadData();
 
+  const dItems = document.querySelectorAll(".d__item");
+
   function updateDestination(index) {
     // el index representa en que boton hizo clic el usuario 0, 1, 2
     const destination = destinationsData[index]; // Se crea una "referencia Local", o sea, un const destination para simplificar el acceso a la información del objeto actual
     // El index es el parámetro que permite saber qué planeta mostrar según el clic del usuario
     // se actualiza el DOM
+
+    const toAnimate = [
+      dImg,
+      dName,
+      dDescription,
+      dDistance,
+      dTravel,
+      ...dItems,
+    ];
+
+    toAnimate.forEach((element) => {
+      element.classList.remove("planetFadeIn");
+    });
+
+    // Esto hace que el navegador *renderice* de nuevo la pantalla (no importa que elemento se ponga antes del .)
+    void dImg.offsetWidth;
 
     dImg.style.backgroundImage = `url(${destination.images.webp})`; // se usa Template Literals, es basicamente el sustituto de + para agregar el valor de una variable
     // `${}` . String Interpolation es meter la info en la variable
@@ -151,6 +169,10 @@ document.addEventListener("DOMContentLoaded", function () {
     dDescription.textContent = destination.description;
     dDistance.textContent = destination.distance;
     dTravel.textContent = destination.travel;
+
+    toAnimate.forEach((element) => {
+      element.classList.add("planetFadeIn");
+    });
   }
 
   function renderTabs() {
