@@ -64,3 +64,48 @@
     background-image: url("../starter-code/assets/#{$name}/background-#{$name}-desktop.jpg");
   }
 }
+
+// padding
+
+@mixin padding {
+  padding-inline: spacing(ml);
+  @include responsive(tablet) {
+    padding-inline: v.rem(120);
+  }
+  @include responsive(desktop) {
+    padding-inline: v.rem(150);
+  }
+}
+
+// section images
+
+@mixin section__images {
+  display: block;
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+// bg images
+
+@mixin bg__position {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+// grid sections
+
+@mixin grid-layout {
+  @include padding;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  margin-block-start: spacing(ml);
+  min-height: 100%;
+}

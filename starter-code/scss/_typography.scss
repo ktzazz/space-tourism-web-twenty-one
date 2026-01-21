@@ -60,14 +60,18 @@
 
 // home
 
+h1,
+.main__title,
+.main__button {
+  @extend .weight_up;
+}
+
 h1 {
   @include m.set-preset(v.$barlowCondensed-settings, "h1-fs");
-  @extend .weight_up;
 }
 
 .main__title {
   @include m.set-preset(v.$bellefair-settings, "preset-1-fs");
-  @extend .weight_up;
 }
 
 .main__p {
@@ -76,26 +80,33 @@ h1 {
 
 .main__button {
   @include m.set-preset(v.$bellefair-settings, "preset-4-fs");
-  @extend .weight_up;
 }
 
 // destinations
 
+.section__title,
+.d__name,
+.c__name,
+.t__name,
+.d__tab,
+.d__item,
+.d__distance,
+.d__travel {
+  @extend .weight_up;
+}
+
 .section__title {
   @include m.set-preset(v.$barlowCondensed-settings, "preset-5-fs");
-  @extend .weight_up;
 }
 
 .d__name,
 .c__name,
 .t__name {
   @include m.set-preset(v.$bellefair-settings, "preset-2-fs");
-  @extend .weight_up;
 }
 
 .d__tab {
   @include m.set-preset(v.$barlowCondensed-settings, "preset-8-fs");
-  @extend .weight_up;
 }
 
 .d__description {
@@ -104,13 +115,11 @@ h1 {
 
 .d__item {
   @include m.set-preset(v.$barlowCondensed-settings, "preset-7-fs");
-  @extend .weight_up;
 }
 
 .d__distance,
 .d__travel {
   @include m.set-preset(v.$bellefair-settings, "preset-6-fs");
-  @extend .weight_up;
 }
 
 //footer
