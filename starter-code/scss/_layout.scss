@@ -252,6 +252,32 @@ header::after {
   margin-block-end: m.spacing(ms);
 }
 
+// crew
+
+.section__crew {
+  @include m.grid-layout;
+  padding-block-end: 3%;
+  @include m.responsive(tablet) {
+    margin-block-start: m.spacing(xl);
+  }
+  @include m.responsive(desktop) {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    width: 100%;
+    justify-content: space-between;
+    margin-block-end: m.spacing(xxl);
+  }
+}
+
+/* .c__txt {
+  grid-area: 
+} */
+
+.c__img {
+  grid-area: 1 / 2 / span 2 / 2;
+}
+
 // section images
 
 .d__img {
