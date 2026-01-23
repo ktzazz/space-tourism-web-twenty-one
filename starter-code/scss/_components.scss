@@ -68,9 +68,15 @@
   background-color: var(--line-nav);
   border-radius: 50%;
   border: none;
+  transition: background-color 0.5s ease-out;
   cursor: pointer;
   @include m.responsive(desktop) {
     width: v.rem(15);
     height: v.rem(15);
   }
+}
+
+.c__img {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }

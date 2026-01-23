@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     toAnimate.forEach((element) => {
-      element.classList.remove("planetFadeIn");
+      element.classList.remove("fadeIn");
     });
 
     // Esto hace que el navegador *renderice* de nuevo la pantalla (no importa que elemento se ponga antes del .)
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
     dTravel.textContent = destination.travel;
 
     toAnimate.forEach((element) => {
-      element.classList.add("planetFadeIn");
+      element.classList.add("fadeIn");
     });
   }
 
@@ -202,11 +202,23 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateCrew(index) {
     const crew = crewData[index];
 
+    const toAnimate = [cImg, cName, cRole, cBio];
+
+    toAnimate.forEach((element) => {
+      element.classList.remove("fadeIn");
+    });
+
+    void cImg.offsetWidth;
+
     cImg.style.backgroundImage = `url(${crew.images.webp})`;
 
     cName.textContent = crew.name;
     cBio.textContent = crew.bio;
     cRole.textContent = crew.role;
+
+    toAnimate.forEach((element) => {
+      element.classList.add("fadeIn");
+    });
   }
 
   function renderDots() {

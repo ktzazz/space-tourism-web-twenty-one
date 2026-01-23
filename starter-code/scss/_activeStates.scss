@@ -93,13 +93,13 @@
   }
 }
 
-// planet animation
+// FADE IN animation FOR TABS
 
-.planetFadeIn {
-  animation: planetEntrance 0.7s ease-out;
+.fadeIn {
+  animation: entrance 1s ease-out;
 }
 
-@keyframes planetEntrance {
+@keyframes entrance {
   from {
     opacity: 0;
   }
@@ -184,6 +184,7 @@
   height: v.rem(10);
   background-color: var(--primary-color) !important;
   border-radius: 50%;
+  transition: background-color 0.5s ease-out;
   @include m.responsive(desktop) {
     width: v.rem(15);
     height: v.rem(15);
