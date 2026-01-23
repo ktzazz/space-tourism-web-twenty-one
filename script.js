@@ -213,9 +213,9 @@ document.addEventListener("DOMContentLoaded", function () {
     cDots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
         cDots.forEach((dot) => {
-          dot.classList.remove("onBtn");
+          dot.classList.remove("crewOn");
         });
-        dot.classList.add("onBtn");
+        dot.classList.add("crewOn");
         updateCrew(index);
       });
     });

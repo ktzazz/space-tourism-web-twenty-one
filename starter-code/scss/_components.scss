@@ -55,3 +55,22 @@
 .section__no {
   color: var(--line-nav);
 }
+
+// crew
+
+.c__role {
+  color: var(--line-nav);
+}
+
+.c__dot {
+  width: v.rem(10);
+  height: v.rem(10);
+  background-color: var(--line-nav);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  @include m.responsive(desktop) {
+    width: v.rem(15);
+    height: v.rem(15);
+  }
+}

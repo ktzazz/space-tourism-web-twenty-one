@@ -270,12 +270,16 @@ header::after {
   }
 }
 
-/* .c__txt {
-  grid-area: 
-} */
+.c__txt {
+  @include m.responsive(desktop) {
+    grid-area: 2 / 1 / span 1 / span 1;
+  }
+}
 
 .c__img {
-  grid-area: 1 / 2 / span 2 / 2;
+  @include m.responsive(desktop) {
+    grid-area: 1 / 2 / span 2 / 2;
+  }
 }
 
 // section images
@@ -300,7 +304,16 @@ header::after {
   }
 }
 
-.c__img,
+.c__img {
+  @include m.section__images;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  @include m.responsive(desktop) {
+    background-position: right;
+  }
+}
+
 .t__img {
   @include m.section__images;
   background-position: center;

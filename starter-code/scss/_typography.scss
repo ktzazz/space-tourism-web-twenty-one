@@ -122,6 +122,22 @@ h1 {
   @include m.set-preset(v.$bellefair-settings, "preset-6-fs");
 }
 
+// crew
+
+.c__role {
+  @include m.set-preset(v.$bellefair-settings, "preset-4-fs");
+  @extend .weight_up;
+}
+
+.c__name {
+  @include m.set-preset(v.$bellefair-settings, "preset-3-fs");
+  @extend .weight_up;
+}
+
+.c__description {
+  @extend .parragraph__description;
+}
+
 //footer
 
 footer {

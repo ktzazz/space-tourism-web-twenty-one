@@ -177,6 +177,24 @@
   }
 }
 
+// crew dots btns
+
+.crewOn {
+  width: v.rem(10);
+  height: v.rem(10);
+  background-color: var(--primary-color) !important;
+  border-radius: 50%;
+  @include m.responsive(desktop) {
+    width: v.rem(15);
+    height: v.rem(15);
+  }
+}
+
+.c__dot:hover:not(.crewOn) {
+  background-color: var(--c-dot-hover);
+  transition: background-color 0.5s ease-out;
+}
+
 //.onBtn FOR BTNS
 .onBtn {
   background-color: red;
