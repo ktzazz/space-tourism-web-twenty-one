@@ -80,3 +80,14 @@
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
+
+// technology
+
+.t__btn {
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--line-nav);
+  color: var(--primary-color);
+  transition: background-color 0.5s ease-out;
+  cursor: pointer;
+}

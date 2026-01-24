@@ -159,6 +159,23 @@ header::after {
   }
 }
 
+// SECTIONS TITLE
+
+.section__title {
+  @include m.responsive(tablet) {
+    position: absolute;
+    left: 0;
+    top: auto;
+    margin-inline-start: 2.5rem;
+  }
+  @include m.responsive(desktop) {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-inline-start: 0;
+  }
+}
+
 // destinations
 
 .section__destination {
@@ -306,6 +323,84 @@ header::after {
   }
 }
 
+// technology
+
+.section__technology {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+  margin-block-start: m.spacing(ml);
+  min-height: 100%;
+  padding-block-end: 3%;
+  @include m.responsive(tablet) {
+    margin-block-start: m.spacing(xl);
+  }
+  @include m.responsive(desktop) {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+    width: 100%;
+    justify-content: space-between;
+    margin-block-end: m.spacing(xxl);
+    padding-inline-start: v.rem(150);
+  }
+}
+
+.t__txt {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  gap: m.spacing(xl);
+  @include m.responsive(desktop) {
+    margin-block-start: 0;
+    grid-area: 2 / 1 / span 1 / span 1;
+    flex-direction: row;
+    gap: m.spacing(xxxl);
+  }
+}
+
+.t__img {
+  margin-block: v.rem(88) m.spacing(l);
+  @include m.responsive(desktop) {
+    grid-area: 1 / 2 / span 2 / 2;
+    align-self: self-end;
+    margin-block: 0;
+  }
+}
+
+.t__btn {
+  width: m.spacing(xl);
+  height: m.spacing(xl);
+  @include m.responsive(tablet) {
+    width: v.rem(56);
+    height: v.rem(56);
+  }
+  @include m.responsive(desktop) {
+    width: m.spacing(huge);
+    height: m.spacing(huge);
+  }
+}
+
+.t__menu {
+  display: flex;
+  gap: m.spacing(m);
+  justify-content: center;
+  @include m.responsive(desktop) {
+    flex-direction: column;
+    gap: m.spacing(l);
+  }
+}
+
+.t__info {
+  @include m.responsive(desktop) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 // section images
 
 .d__img {
@@ -342,10 +437,21 @@ header::after {
 }
 
 .t__img {
-  @include m.section__images;
+  display: block;
+  aspect-ratio: 1 / 1;
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   width: 100%;
-  height: 100%;
+  height: 30%;
+  @include m.responsive(tablet) {
+    height: 33%;
+  }
+  @include m.responsive(desktop) {
+    background-position: right;
+    background-size: contain;
+    height: 90%;
+  }
 }
 
 // background imgs

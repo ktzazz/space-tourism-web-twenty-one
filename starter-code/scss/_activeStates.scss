@@ -198,9 +198,30 @@
 
 //.onBtn FOR BTNS
 .onBtn {
-  background-color: red;
-  color: var(--primary-color);
+  background-color: var(--primary-color) !important;
+  border-radius: 50%;
+  color: var(--background-color) !important;
+  transition:
+    background-color 0.5s ease-out,
+    color 0.5s ease-out;
+  width: m.spacing(xl);
+  height: m.spacing(xl);
+  @include m.responsive(tablet) {
+    width: v.rem(56);
+    height: v.rem(56);
+  }
+  @include m.responsive(desktop) {
+    width: m.spacing(huge);
+    height: m.spacing(huge);
+  }
 }
+
+.t__btn:hover:not(.onBtn) {
+  border-color: var(--primary-color);
+  transition: border-color 0.5s ease-out;
+}
+
+// display
 
 .inactive {
   display: none;

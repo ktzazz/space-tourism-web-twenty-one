@@ -249,8 +249,20 @@ document.addEventListener("DOMContentLoaded", function () {
     // La variable currentSize actúa como un ancla. Sin ella, el diseño responsivo perdería la sincronía con la interacción del usuario
     const tech = techData[index];
 
+    const toAnimate = [tImg, tName, tDescription];
+
+    toAnimate.forEach((element) => {
+      element.classList.remove("fadeIn");
+    });
+
+    void tImg.offsetWidth;
+
     tName.textContent = tech.name;
     tDescription.textContent = tech.description;
+
+    toAnimate.forEach((element) => {
+      element.classList.add("fadeIn");
+    });
 
     sizeChange(tech); //se manda la informacion de la const tech a la funcion sizeChange
   }

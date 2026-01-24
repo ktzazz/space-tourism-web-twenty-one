@@ -138,6 +138,13 @@ h1 {
   @extend .parragraph__description;
 }
 
+// technology
+
+.t__btn {
+  @include m.set-preset(v.$bellefair-settings, "preset-4-fs");
+  @extend .weight_up;
+}
+
 //footer
 
 footer {
