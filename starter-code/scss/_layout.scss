@@ -180,9 +180,11 @@ header::after {
 
 .section__destination {
   @include m.grid-layout;
-  padding-block-end: 3%;
+  padding-block-end: 8%;
+
   @include m.responsive(tablet) {
     margin-block-start: m.spacing(xl);
+    padding-block-end: 3%;
   }
   @include m.responsive(desktop) {
     grid-template-rows: 1fr;
@@ -273,10 +275,11 @@ header::after {
 
 .section__crew {
   @include m.grid-layout;
-  padding-block-end: 8%;
+  padding-block-end: 14%;
 
   @include m.responsive(tablet) {
     margin-block-start: m.spacing(xl);
+    padding-block-end: 8%;
   }
   @include m.responsive(desktop) {
     grid-template-rows: 0.5fr 1fr;
@@ -334,9 +337,10 @@ header::after {
   text-align: center;
   margin-block-start: m.spacing(ml);
   min-height: 100%;
-  padding-block-end: 8%;
+  padding-block-end: 14%;
   @include m.responsive(tablet) {
     margin-block-start: m.spacing(xl);
+    padding-block-end: 8%;
   }
   @include m.responsive(desktop) {
     display: grid;

@@ -50,8 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuOptions = document.querySelectorAll(".menu__item");
   const sections = document.querySelectorAll("section");
 
-  console.log(sections);
-
   menuOptions.forEach((option, index) => {
     option.addEventListener("click", () => {
       // all the sections will turn off
@@ -74,6 +72,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // hace que el enter del teclado funcione como click
+  menuOptions.forEach((option) => {
+    option.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault(); // Evita que la página salte
+        option.click(); // llama a la lógica de arriba
+      }
+    });
+  });
+
   // home buttons
 
   const logo = document.querySelector(".header__logo");
@@ -82,6 +90,13 @@ document.addEventListener("DOMContentLoaded", function () {
   logo.addEventListener("click", () => {
     if (logo.classList.contains("clickable")) {
       menuOptions[0].click(); // activates the logic that home already has (navOn)
+    }
+  });
+
+  logo.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault(); // Evita que la página salte
+      logo.click(); // llama a la lógica de arriba
     }
   });
 
@@ -186,6 +201,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         tab.classList.add("planetOn");
         updateDestination(index);
+      });
+
+      tab.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault(); // Evita que la página salte
+          tab.click(); // llama a la lógica de arriba
+        }
       });
     });
   }
