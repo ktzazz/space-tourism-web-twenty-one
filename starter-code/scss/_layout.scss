@@ -273,7 +273,8 @@ header::after {
 
 .section__crew {
   @include m.grid-layout;
-  padding-block-end: 3%;
+  padding-block-end: 8%;
+
   @include m.responsive(tablet) {
     margin-block-start: m.spacing(xl);
   }
@@ -284,6 +285,7 @@ header::after {
     width: 100%;
     justify-content: space-between;
     margin-block-end: m.spacing(xxl);
+    padding-block-end: 3%;
   }
 }
 
@@ -332,7 +334,7 @@ header::after {
   text-align: center;
   margin-block-start: m.spacing(ml);
   min-height: 100%;
-  padding-block-end: 3%;
+  padding-block-end: 8%;
   @include m.responsive(tablet) {
     margin-block-start: m.spacing(xl);
   }
@@ -345,6 +347,7 @@ header::after {
     justify-content: space-between;
     margin-block-end: m.spacing(xxl);
     padding-inline-start: v.rem(150);
+    padding-block-end: 3%;
   }
 }
 
@@ -394,10 +397,27 @@ header::after {
 }
 
 .t__info {
+  @include m.padding;
+
   @include m.responsive(desktop) {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-inline: 0;
+  }
+}
+
+.t__name {
+  margin-block: m.spacing(m);
+
+  @include m.responsive(desktop) {
+    margin-block-end: m.spacing(ml);
+  }
+}
+
+.t__description {
+  @include m.responsive(desktop) {
+    width: 96%;
   }
 }
 
@@ -443,9 +463,9 @@ header::after {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 30%;
+  height: v.rem(300);
   @include m.responsive(tablet) {
-    height: 33%;
+    height: v.rem(400);
   }
   @include m.responsive(desktop) {
     background-position: right;

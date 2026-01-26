@@ -140,9 +140,19 @@ h1 {
 
 // technology
 
-.t__btn {
+.t__btn,
+.t__title {
   @include m.set-preset(v.$bellefair-settings, "preset-4-fs");
   @extend .weight_up;
+}
+
+.t__name {
+  @include m.set-preset(v.$bellefair-settings, "preset-3-fs");
+  @extend .weight_up;
+}
+
+.t__description {
+  @extend .parragraph__description;
 }
 
 //footer
